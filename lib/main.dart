@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-//import 'package:prueba/pages/login.dart';
-// import 'package:prueba/pages/register.dart';
+import 'package:flutter/services.dart';
 import 'package:prueba/screens/body_boarding.dart';
-// import 'package:prueba/pages/view01.dart';
-// import 'package:prueba/pages/view02.dart';
-// import 'package:prueba/pages/view03.dart';
+import 'package:prueba/screens/splash_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+int? isViewed;
+void main() async {
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  isViewed = prefs.getInt('isViewed');
+
   runApp(const MyApp());
 }
 
@@ -14,11 +21,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "OnBoardingGabriel",
-      home: BodyBoarding()
+      title: "All For My Pet",
+      home: isViewed != 0 ? const BodyBoarding() : const SplashView(),
     );
   }
 }
-
