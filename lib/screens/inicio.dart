@@ -13,8 +13,7 @@ class Inicio extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 80.0),
+            padding: const EdgeInsets.symmetric(horizontal: 80.0),
             child: SizedBox(child: Image.asset('assets/images/logo.png')),
           ),
           Column(
@@ -34,12 +33,15 @@ class Inicio extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: const [
-                        FaIcon(FontAwesomeIcons.google, color: Colors.white,),
+                        FaIcon(
+                          FontAwesomeIcons.google,
+                          color: Colors.white,
+                        ),
                         Padding(
-                          padding: EdgeInsets.only(right : 50.0),
+                          padding: EdgeInsets.only(right: 50.0),
                           child: Text(
                             "Continuar con Google",
-                            style: TextStyle(fontSize: 18,color: Colors.white),
+                            style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
                         ),
                       ],
@@ -63,12 +65,15 @@ class Inicio extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: const [
-                        FaIcon(FontAwesomeIcons.squareFacebook, color: Colors.white,),
+                        FaIcon(
+                          FontAwesomeIcons.squareFacebook,
+                          color: Colors.white,
+                        ),
                         Padding(
                           padding: EdgeInsets.only(right: 50.0),
                           child: Text(
                             "Continuar con Facebook",
-                            style: TextStyle(fontSize: 18,color: Colors.white),
+                            style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
                         ),
                       ],
@@ -85,9 +90,10 @@ class Inicio extends StatelessWidget {
                   child: MaterialButton(
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Register()),
-                        );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Register()),
+                      );
                     },
                     color: const Color(0xFFfeffff),
                     shape: RoundedRectangleBorder(
@@ -102,7 +108,8 @@ class Inicio extends StatelessWidget {
                           padding: EdgeInsets.only(right: 50.0),
                           child: Text(
                             "Registrarse con e-mail",
-                            style: TextStyle(fontSize: 18,color: Color(0xFF65676f)),
+                            style: TextStyle(
+                                fontSize: 18, color: Color(0xFF65676f)),
                           ),
                         ),
                       ],
@@ -120,7 +127,13 @@ class Inicio extends StatelessWidget {
                 SizedBox(
                     height: 30.0,
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
+                          );
+                        },
                         child: const Text(
                           "Entrar como invitado",
                           style:
@@ -129,7 +142,13 @@ class Inicio extends StatelessWidget {
                 SizedBox(
                     height: 30.0,
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
+                          );
+                        },
                         child: const Text(
                           "Entrar como vendedor",
                           style:
@@ -151,7 +170,8 @@ class Inicio extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Login()),
+                          MaterialPageRoute(
+                              builder: (context) => const Login()),
                         );
                       },
                       child: const Text(

@@ -10,6 +10,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   bool agree = false;
+  bool _obscureTextPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,12 +108,23 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           TextField(
-                            obscureText: true,
+                            obscureText: _obscureTextPassword,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               hintText: ('Contraseña'),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _obscureTextPassword =
+                                        !_obscureTextPassword;
+                                  });
+                                },
+                                child: Icon(_obscureTextPassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility),
+                              ),
                             ),
                           ),
                           const Padding(

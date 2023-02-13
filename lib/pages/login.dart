@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/screens/reset_password.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -42,10 +43,24 @@ class Login extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 20),
                           child: TextField(
                             decoration: InputDecoration(
-                              hintText: ('email'),
+                              hintText: ('password'),
                             ),
                           ),
                         ),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ResetPassword()),
+                              );
+                            },
+                            child: const Text(
+                              "¿Haz olvidado tu contraseña?",
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Color(0xFFfc145f)),
+                            )),
                         OutlinedButton(
                           onPressed: () {
                             debugPrint('Accediendo');
