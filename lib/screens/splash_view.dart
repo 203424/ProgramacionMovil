@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/pages/login.dart';
+import 'package:prueba/screens/login.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
