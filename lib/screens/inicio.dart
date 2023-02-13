@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:prueba/pages/login.dart';
 import 'package:prueba/screens/register.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Inicio extends StatelessWidget {
+  const Inicio({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +148,12 @@ class Login extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Login()),
+                        );
+                      },
                       child: const Text(
                         "Iniciar sesión",
                         style:

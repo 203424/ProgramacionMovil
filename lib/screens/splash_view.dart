@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/screens/login.dart';
+import 'package:prueba/screens/inicio.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -15,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
         const Duration(milliseconds: 1500),
         () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const Login()),
+              MaterialPageRoute(builder: (context) => const Inicio()),
             ));
     super.initState();
   }
