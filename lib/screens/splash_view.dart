@@ -17,6 +17,7 @@ class _SplashViewState extends State<SplashView> {
               context,
               MaterialPageRoute(builder: (context) => const Inicio()),
             ));
+            
     super.initState();
   }
 
