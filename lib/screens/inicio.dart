@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:prueba/pages/login.dart';
+import 'package:prueba/screens/components/authenticator.dart';
 import 'package:prueba/screens/register.dart';
 
 class Inicio extends StatelessWidget {
@@ -9,6 +12,7 @@ class Inicio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Firebase.initializeApp();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -25,7 +29,12 @@ class Inicio extends StatelessWidget {
                   height: 55.0,
                   width: double.infinity,
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () async{
+                      User? user = await Authenticator.signIn(
+                        context: context
+                      );
+                      print(user?.displayName);
+                    },
                     color: const Color(0xFF3e68ec),
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(
