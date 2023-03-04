@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:prueba/pages/login.dart';
 import 'package:prueba/screens/register.dart';
@@ -157,32 +158,25 @@ class Inicio extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "¿Ya tienes una cuenta?",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  TextButton(
-                      onPressed: () {
+          RichText(
+            text: TextSpan(
+              style: const TextStyle(fontSize: 14.0, color: Colors.black),
+              children: [
+                const TextSpan(text: '¿Ya tienes cuenta?'),
+                TextSpan(
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Login()),
-                        );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()));
                       },
-                      child: const Text(
-                        "Iniciar sesión",
-                        style:
-                            TextStyle(fontSize: 16, color: Color(0xFFfc145f)),
-                      ))
-                ],
-              ),
-            ],
-          )
+                    text: ' Iniciar sesión',
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, color: Color(0xFFfc145f))),
+              ],
+            ),
+          ),
         ],
       ),
     );

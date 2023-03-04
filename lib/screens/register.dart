@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:prueba/pages/login.dart';
+import 'package:prueba/screens/inicio.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -30,7 +32,7 @@ class _RegisterState extends State<Register> {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
           child: LayoutBuilder(
             builder:
                 (BuildContext context, BoxConstraints viewportConstraints) {
@@ -152,15 +154,31 @@ class _RegisterState extends State<Register> {
                                   text: TextSpan(
                                     text: 'Al registrarme, acepto los',
                                     style: DefaultTextStyle.of(context).style,
-                                    children: const [
+                                    children: [
                                       TextSpan(
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const Inicio()));
+                                            },
                                           text: ' términos y condiciones',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Color(0xFFfc145f))),
-                                      TextSpan(text: ' y la '),
+                                      const TextSpan(text: ' y la '),
                                       TextSpan(
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const Inicio()));
+                                            },
                                           text: 'política de privacidad',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Color(0xFFfc145f))),
                                     ],
                                   ),
@@ -173,7 +191,7 @@ class _RegisterState extends State<Register> {
                       Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
+                            padding: const EdgeInsets.only(bottom: 20),
                             child: SizedBox(
                               width: double.infinity,
                               height: 55.0,
@@ -190,28 +208,27 @@ class _RegisterState extends State<Register> {
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                "¿Ya tienes una cuenta?",
-                                style: TextStyle(fontSize: 16.0),
-                              ),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const Login()),
-                                    );
-                                  },
-                                  child: const Text(
-                                    "Iniciar sesión",
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        color: Color(0xFFfc145f)),
-                                  ))
-                            ],
+                          RichText(
+                            text: TextSpan(
+                              style: const TextStyle(
+                                  fontSize: 14.0, color: Colors.black),
+                              children: [
+                                const TextSpan(text: '¿Ya tienes cuenta?'),
+                                TextSpan(
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Login()));
+                                      },
+                                    text: ' Iniciar sesión',
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xFFfc145f))),
+                              ],
+                            ),
                           ),
                         ],
                       )
