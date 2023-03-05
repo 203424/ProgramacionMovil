@@ -30,9 +30,7 @@ class Inicio extends StatelessWidget {
                   width: double.infinity,
                   child: MaterialButton(
                     onPressed: () async{
-                      User? user = await Authenticator.signIn(
-                        context: context
-                      );
+                      User? user = await Authenticator.signIn(context: context);
                       print(user?.displayName);
                     },
                     color: const Color(0xFF3e68ec),
@@ -66,7 +64,10 @@ class Inicio extends StatelessWidget {
                   height: 55.0,
                   width: double.infinity,
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () async{
+                      User? user = await Authenticator.facebookSignIn(context: context);
+                      print(user?.displayName);
+                    },
                     color: const Color(0xFF384e9f),
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(
