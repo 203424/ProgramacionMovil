@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:prueba/pages/login.dart';
 import 'package:prueba/screens/register.dart';
+import 'package:prueba/services/firebase_auth_methods.dart';
 
 class Inicio extends StatelessWidget {
   const Inicio({super.key});
@@ -25,7 +28,9 @@ class Inicio extends StatelessWidget {
                   height: 55.0,
                   width: double.infinity,
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<FirebaseAuthMethods>().signInWithGoogle(context);
+                    },
                     color: const Color(0xFF3e68ec),
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(
@@ -57,7 +62,9 @@ class Inicio extends StatelessWidget {
                   height: 55.0,
                   width: double.infinity,
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<FirebaseAuthMethods>().signInWithFacebook(context);
+                    },
                     color: const Color(0xFF384e9f),
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(

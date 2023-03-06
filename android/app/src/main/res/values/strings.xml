@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PM Corte2</string>
+    <string name="facebook_app_id">766653551840831</string>
+    <string name="fb_login_protocol_scheme">fb766653551840831</string>
+    <string name="facebook_client_token">21264af2d4072942e1cf03d55e2cf769</string>
+</resources>

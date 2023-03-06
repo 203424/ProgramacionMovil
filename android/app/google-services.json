@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "92093430450",
+    "project_id": "pm-corte2",
+    "storage_bucket": "pm-corte2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92093430450:android:19b4dd9ec151b08231a7ab",
+        "android_client_info": {
+          "package_name": "com.example.prueba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92093430450-2h10f0n2khd439ae2bhdoa3fmmbqruaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prueba",
+            "certificate_hash": "3488fce3818ce77832cb2f092a21b977538c3f56"
+          }
+        },
+        {
+          "client_id": "92093430450-lrkfo79h7f9vo934r65h0spbi7g3p0qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvjdhytgL-lGOfjC073G29-YgQswE-v3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92093430450-7pkap7658gr03ccud1pp0easrvft31du.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "92093430450-9die7o9njkl42oif3c0i7faae1cqd0kv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.prueba"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
